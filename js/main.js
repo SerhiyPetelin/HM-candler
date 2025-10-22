@@ -5,8 +5,18 @@ menuBtn.addEventListener('click', ()=>{
     menuMobile.classList.toggle('menu--open');
 })
 
-const swiperOne = new Swiper('.feedback__slider', {
+const swiperOne = new Swiper('.certificates__slider', {
   loop: true,
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
+});
+
+const swiper = new Swiper('.certificates__slider', {
+  loop: true,
+  slidesPerView: 3,
+  spaceBetween: 20,
 
   pagination: {
     el: '.swiper-pagination',
