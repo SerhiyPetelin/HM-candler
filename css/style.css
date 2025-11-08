@@ -464,6 +464,54 @@ button {
     bottom: 60px;
 }
 
+.accordeon {
+
+}
+
+.accordeon__item {
+    background-color: #FAFAFA;
+    margin-bottom: 10px;
+}
+
+.accordeon__title {
+    font-family: "Yeseva One", serif;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    padding: 16px 50px 16px 13px;
+    position: relative;
+    
+}
+
+.accordeon__title::after {
+    content: '';
+    background-image: url(../images/arrow.svg);
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 26px;
+    top: 17px;
+}
+.accordeon__title.accordeon__title--active::after {
+    transform: rotate(180deg);
+}
+
+.accordeon__text {
+    opacity: 0;
+    max-height: 0;
+    transition: opacity .3s, max-height .3s;
+}
+
+.accordeon__text-content {
+    padding: 20px 40px;
+}
+
+.accordeon__text.accordeon__text--visible {
+    opacity: 1;
+}
+
 .promo {
     background-image: url(../images/promo-bg.jpg);
     background-repeat: no-repeat;
@@ -542,9 +590,6 @@ button {
     margin-top: 36px;
     padding: 17px 34px;
 }
-
-
-
 
 .footer {
     padding-top: 40px;
@@ -635,6 +680,16 @@ button {
     }
     .certificates__content .swiper-pagination {
         text-align: center;
+    }
+    .promo__link {
+        min-width: 135px;
+        text-align: center;
+    }
+    .promo__text {
+        padding-left: 0;
+    }
+    .contacts__img {
+        width: 335px;
     }
 }
 
@@ -803,6 +858,31 @@ button {
     .feedback__item-content {
         padding-bottom: 45px;
     }
+    .promo__text {
+        font-size: 15px;
+    }
+    .promo__link {
+        font-size: 12px;
+    }
+    .promo {
+        padding: 67px 0;
+    }
+    .contacts__img {
+        width: 187px;
+        object-fit: cover;
+    }
+    .form {
+        width: 440px;
+        gap: 0 20px;
+        padding: 30px 22px;
+    }
+    .form__title {
+        font-size: 15px;
+        margin-bottom: 20px; 
+    }
+    .form__btn {
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 640px) {
@@ -822,6 +902,7 @@ button {
         top: 0;
         transform: translateY(-110%);
         transition: transform .5s ease;
+        z-index: 10;
     }
     .header__menu-list.menu--open {
         transform: translateY(0%);
@@ -919,7 +1000,7 @@ button {
     }
     .section__descr {
         margin: 0 auto 30px;
-        width: 300px;
+        width: 300px;  
     }
     .steps__list {
         gap: 25px 40px;
@@ -933,6 +1014,18 @@ button {
     .certificates__slider {
         width: 415px;
         margin: 0 auto;
+    }
+    .promo {
+        padding: 42px 0;
+    }
+    .contacts__img {
+        display: none;
+    }
+    .form__input::placeholder {
+    font-size: 10px;
+    }
+    .contacts {
+        padding-top: 50px;
     }
 }
 
@@ -1065,5 +1158,8 @@ button {
     }
     .certificates__slider {
         width: 200px;
+    }
+    .promo__text {
+        margin-right: 50px;
     }
 }
